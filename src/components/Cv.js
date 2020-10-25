@@ -1,26 +1,76 @@
 import React from "react";
-import { Container, Col, Row, Button } from "react-bootstrap";
+import { Container, Row, Button, Col } from "react-bootstrap";
 
 function Cv(props) {
-  const { name, email, phoneNumber } = props.state;
+  const {
+    name,
+    email,
+    adress,
+    phoneNumber,
+    schoolName,
+    studyType,
+    studyStartDate,
+    studyEndDate,
+    companyName,
+    positionTitle,
+    mainTasks,
+    jobStartDate,
+    jobEndDate,
+  } = props.state;
   return (
     <Container>
-      <h2>Basic Information</h2>
+      <Row>
+        <h5>{name}</h5>
+      </Row>
+      <Row>
+        <p>{adress}</p>
+      </Row>
+      <Row>
+        <p>{email}</p>
+      </Row>
+      <Row>
+        <p>{phoneNumber}</p>
+      </Row>
+      <Row>
+        <h4>Education</h4>
+      </Row>
+      <Row>
+        <p>
+          {studyType} ({schoolName}), {studyStartDate} - {studyEndDate}
+        </p>
+      </Row>
+      <Row>
+        <h4 style={{ textAlign: "left", paddingLeft: 0 }}>Work Experience</h4>
+      </Row>
+      <Row>
+        <h6>
+          {companyName} - {jobStartDate} - {jobEndDate}
+        </h6>
+      </Row>
+      <Row>
+        <p>{positionTitle}</p>
+      </Row>
+      <Row>
+        <p style={{ maxWidth: "400px", textAlign: "left" }}>{mainTasks}</p>
+      </Row>
+
       <Row>
         <Col>
-          <p>Name</p>
-          <h4>{name}</h4>
+          <Button variant="success" onClick={props.toggleEdit}>
+            Edit
+          </Button>
         </Col>
         <Col>
-          <p>Email address</p>
-          <p>{email}</p>
+          <Button variant="success" onClick={() => {}}>
+            Add Education
+          </Button>
         </Col>
         <Col>
-          <p>Phone Number</p>
-          <p>{phoneNumber}</p>
+          <Button variant="success" onClick={() => {}}>
+            Add Experience
+          </Button>
         </Col>
       </Row>
-      <Button onClick={props.toggleEdit}>Edit</Button>
     </Container>
   );
 }

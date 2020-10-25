@@ -3,11 +3,12 @@ import { Form, Container, Col, Row } from "react-bootstrap";
 
 class BasicInfo extends React.Component {
   render() {
-    const { name, email, phoneNumber, handleChange } = this.props;
+    const { name, email, adress, phoneNumber } = this.props.state;
+    const { handleChange } = this.props;
     return (
       <Container>
         <h2>Basic Information</h2>
-        <Row>
+        <Row xs={2} md={4} lg={12}>
           <Col>
             <Form.Label>Name</Form.Label>
             <Form.Control
@@ -16,6 +17,16 @@ class BasicInfo extends React.Component {
               onChange={handleChange}
               type="text"
               placeholder="Enter full name"
+            />
+          </Col>
+          <Col>
+            <Form.Label>Adress</Form.Label>
+            <Form.Control
+              name="adress"
+              value={adress}
+              onChange={handleChange}
+              type="text"
+              placeholder="Enter adress"
             />
           </Col>
           <Col>

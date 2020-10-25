@@ -6,33 +6,12 @@ import { Container, Button } from "react-bootstrap";
 
 class MyForm extends React.Component {
   render() {
-    const {
-      name,
-      email,
-      phoneNumber,
-      toggleEdit,
-      handleChange,
-      schoolName,
-      studyType,
-      studyStartDate,
-      studyEndDate,
-    } = this.props;
+    const { toggleEdit, handleChange, state } = this.props;
     return (
       <Container>
-        <BasicInfo
-          handleChange={handleChange}
-          name={name}
-          email={email}
-          phoneNumber={phoneNumber}
-        />
-        <Education
-          handleChange={handleChange}
-          schoolName={schoolName}
-          studyType={studyType}
-          studyStartDate={studyStartDate}
-          studyEndDate={studyEndDate}
-        />
-        <Experience />
+        <BasicInfo handleChange={handleChange} state={state} />
+        <Education handleChange={handleChange} state={state} />
+        <Experience handleChange={handleChange} state={state} />
         <Button onClick={toggleEdit} type="primary">
           Close
         </Button>

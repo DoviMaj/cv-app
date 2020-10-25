@@ -7,21 +7,26 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      edit: true,
-      name: "dv",
-      email: "dv@gmail.com",
-      phoneNumber: "093923932",
-      schoolName: "cds",
-      studyType: "biology",
-      studyStartDate: "",
-      studyEndDate: "",
+      edit: false,
+      name: "Flavio Gonzales",
+      email: "flaviogonz@gmail.com",
+      phoneNumber: "1393923932",
+      adress: "3204 Windover Way Houston, TX 77204",
+      schoolName: "University of Houston",
+      studyType: "Ph.d in spanish",
+      studyStartDate: "2017-06-01",
+      studyEndDate: "2013-04-11",
+      companyName: "ABC Corporation",
+      positionTitle: "Linguist",
+      mainTasks:
+        "Edited and translated written materials, business correspondence, and translation between languages.",
+      jobStartDate: "2018-04-13",
+      jobEndDate: "2020-02-26",
     };
     this.handleChange = this.handleChange.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
   }
   handleChange(e) {
-    e.preventDefault();
-    debugger;
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -33,16 +38,6 @@ class App extends React.Component {
     });
   }
   render() {
-    const {
-      name,
-      email,
-      phoneNumber,
-      schoolName,
-      studyType,
-      studyStartDate,
-      studyEndDate,
-    } = this.state;
-
     return (
       <div className="App">
         <h1>CV APP</h1>
@@ -50,15 +45,9 @@ class App extends React.Component {
           <Cv state={this.state} toggleEdit={this.toggleEdit} />
         ) : (
           <MyForm
+            state={this.state}
             handleChange={this.handleChange}
             toggleEdit={this.toggleEdit}
-            name={name}
-            email={email}
-            phoneNumber={phoneNumber}
-            schoolName={schoolName}
-            studyType={studyType}
-            studyStartDate={studyStartDate}
-            studyEndDate={studyEndDate}
           />
         )}
       </div>

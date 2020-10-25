@@ -4,12 +4,12 @@ import { Form, Container, Col, Row } from "react-bootstrap";
 class Education extends React.Component {
   render() {
     const {
-      handleChange,
       schoolName,
       studyType,
       studyStartDate,
       studyEndDate,
-    } = this.props;
+    } = this.props.state;
+    const { handleChange } = this.props;
     return (
       <Container>
         <h2>Education</h2>
@@ -25,7 +25,7 @@ class Education extends React.Component {
             />
           </Col>
           <Col>
-            <Form.Label>Study Title</Form.Label>
+            <Form.Label>Study Type</Form.Label>
             <Form.Control
               onChange={handleChange}
               value={studyType}
@@ -43,7 +43,6 @@ class Education extends React.Component {
               value={studyStartDate}
               name="studyStartDate"
               type="date"
-              placeholder="Enter study date"
             />
           </Col>
           <Col>
@@ -53,7 +52,6 @@ class Education extends React.Component {
               name="studyEndDate"
               value={studyEndDate}
               type="date"
-              placeholder="Enter study date"
             />
           </Col>
         </Row>
