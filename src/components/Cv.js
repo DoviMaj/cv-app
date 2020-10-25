@@ -9,7 +9,7 @@ function Cv(props) {
       <Row>
         <Col>
           <p>Name</p>
-          <h2>{name}</h2>
+          <h4>{name}</h4>
         </Col>
         <Col>
           <p>Email address</p>

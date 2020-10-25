@@ -9,44 +9,38 @@ class BasicInfo extends React.Component {
         <h2>Basic Information</h2>
         <Row>
           <Col>
-            <Form.Group controlId="formBasicName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                name="name"
-                value={name}
-                onChange={handleChange}
-                type="text"
-                placeholder="Enter full name"
-              />
-            </Form.Group>
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              name="name"
+              value={name}
+              onChange={handleChange}
+              type="text"
+              placeholder="Enter full name"
+            />
           </Col>
           <Col>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                name="email"
-                onChange={handleChange}
-                value={email}
-                type="email"
-                placeholder="Enter email"
-              />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              name="email"
+              onChange={handleChange}
+              value={email}
+              type="email"
+              placeholder="Enter email"
+            />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
           </Col>
           <Col>
-            <Form.Group controlId="formBasicPhone">
-              <Form.Label>Phone Number</Form.Label>
-              <Form.Control
-                name="phoneNumber"
-                onChange={handleChange}
-                value={phoneNumber}
-                type="text"
-                pattern="^[0-9]+$"
-                placeholder="Enter phone number"
-              />
-            </Form.Group>
+            <Form.Label>Phone Number</Form.Label>
+            <Form.Control
+              name="phoneNumber"
+              onChange={handleChange}
+              value={phoneNumber}
+              type="text"
+              pattern="^[0-9]+$"
+              placeholder="Enter phone number"
+            />
           </Col>
         </Row>
       </Container>

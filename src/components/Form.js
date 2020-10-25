@@ -2,26 +2,40 @@ import React from "react";
 import Experience from "./Experience";
 import Education from "./Education";
 import BasicInfo from "./Basic-info";
-import { Form, Container, Button } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 
 class MyForm extends React.Component {
   render() {
-    const { name, email, phoneNumber, toggleEdit, handleChange } = this.props;
+    const {
+      name,
+      email,
+      phoneNumber,
+      toggleEdit,
+      handleChange,
+      schoolName,
+      studyType,
+      studyStartDate,
+      studyEndDate,
+    } = this.props;
     return (
       <Container>
-        <Form>
-          <BasicInfo
-            handleChange={handleChange}
-            name={name}
-            email={email}
-            phoneNumber={phoneNumber}
-          />
-          <Education />
-          <Experience />
-          <Button onClick={toggleEdit} type="primary">
-            Close
-          </Button>
-        </Form>
+        <BasicInfo
+          handleChange={handleChange}
+          name={name}
+          email={email}
+          phoneNumber={phoneNumber}
+        />
+        <Education
+          handleChange={handleChange}
+          schoolName={schoolName}
+          studyType={studyType}
+          studyStartDate={studyStartDate}
+          studyEndDate={studyEndDate}
+        />
+        <Experience />
+        <Button onClick={toggleEdit} type="primary">
+          Close
+        </Button>
       </Container>
     );
   }

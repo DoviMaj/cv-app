@@ -11,11 +11,17 @@ class App extends React.Component {
       name: "dv",
       email: "dv@gmail.com",
       phoneNumber: "093923932",
+      schoolName: "cds",
+      studyType: "biology",
+      studyStartDate: "",
+      studyEndDate: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
   }
   handleChange(e) {
+    e.preventDefault();
+    debugger;
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -27,7 +33,15 @@ class App extends React.Component {
     });
   }
   render() {
-    const { name, email, phoneNumber } = this.state;
+    const {
+      name,
+      email,
+      phoneNumber,
+      schoolName,
+      studyType,
+      studyStartDate,
+      studyEndDate,
+    } = this.state;
 
     return (
       <div className="App">
@@ -41,6 +55,10 @@ class App extends React.Component {
             name={name}
             email={email}
             phoneNumber={phoneNumber}
+            schoolName={schoolName}
+            studyType={studyType}
+            studyStartDate={studyStartDate}
+            studyEndDate={studyEndDate}
           />
         )}
       </div>
