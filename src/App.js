@@ -7,15 +7,27 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      edit: false,
+      edit: true,
       name: "Flavio Gonzales",
       email: "flaviogonz@gmail.com",
       phoneNumber: "1393923932",
       adress: "3204 Windover Way Houston, TX 77204",
-      schoolName: "University of Houston",
-      studyType: "Ph.d in spanish",
-      studyStartDate: "2017-06-01",
-      studyEndDate: "2013-04-11",
+      education: [
+        {
+          id: 1,
+          schoolName: "University of Houston",
+          studyType: "Ph.d in spanish",
+          studyStartDate: "2017-06-01",
+          studyEndDate: "2013-04-11",
+        },
+        {
+          id: 2,
+          schoolName: "University of TX",
+          studyType: "Mb.d in Linguistics",
+          studyStartDate: "2017-06-01",
+          studyEndDate: "2013-04-11",
+        },
+      ],
       companyName: "ABC Corporation",
       positionTitle: "Linguist",
       mainTasks:
@@ -25,6 +37,8 @@ class App extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
+    this.addEducation = this.addEducation.bind(this);
+    this.handleEdChange = this.handleEdChange.bind(this);
   }
   handleChange(e) {
     this.setState({
@@ -37,15 +51,49 @@ class App extends React.Component {
       edit: !this.state.edit,
     });
   }
+  handleEdChange(e) {
+    const newEd = this.state.education.map((ed) => {
+      if (ed.id === Number(e.target.closest(".ed-container").id)) {
+        const ed1 = ed;
+        ed1[e.target.name] = [e.target.value];
+        return ed1;
+      } else {
+        return ed;
+      }
+    });
+    this.setState({
+      education: newEd,
+    });
+  }
+  addEducation() {
+    const thisStateEd = this.state.education;
+    const newId = thisStateEd[thisStateEd.length - 1].id + 1;
+    const newEdField = {
+      id: newId,
+      schoolName: "",
+      studyType: "",
+      studyStartDate: "",
+      studyEndDate: "",
+    };
+    this.setState({
+      education: this.state.education.concat(newEdField),
+    });
+  }
   render() {
     return (
       <div className="App">
         <h1>CV APP</h1>
         {!this.state.edit ? (
-          <Cv state={this.state} toggleEdit={this.toggleEdit} />
+          <Cv
+            state={this.state}
+            addEducation={this.addEducation}
+            toggleEdit={this.toggleEdit}
+          />
         ) : (
           <MyForm
+            addEducation={this.addEducation}
             state={this.state}
+            handleEdChange={this.handleEdChange}
             handleChange={this.handleChange}
             toggleEdit={this.toggleEdit}
           />

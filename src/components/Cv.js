@@ -7,16 +7,13 @@ function Cv(props) {
     email,
     adress,
     phoneNumber,
-    schoolName,
-    studyType,
-    studyStartDate,
-    studyEndDate,
     companyName,
     positionTitle,
     mainTasks,
     jobStartDate,
     jobEndDate,
   } = props.state;
+
   return (
     <Container>
       <Row>
@@ -34,14 +31,23 @@ function Cv(props) {
       <Row>
         <h4>Education</h4>
       </Row>
-      <Row>
-        <p>
-          {studyType} ({schoolName}), {studyStartDate} - {studyEndDate}
-        </p>
-      </Row>
+      {props.state.education.map((item) => {
+        return (
+          <div key={item.id}>
+            <Row>
+              <p>
+                {item.studyType} ({item.schoolName}), {item.studyStartDate} -{" "}
+                {item.studyEndDate}
+              </p>
+            </Row>
+          </div>
+        );
+      })}
+
       <Row>
         <h4 style={{ textAlign: "left", paddingLeft: 0 }}>Work Experience</h4>
       </Row>
+
       <Row>
         <h6>
           {companyName} - {jobStartDate} - {jobEndDate}
@@ -58,16 +64,6 @@ function Cv(props) {
         <Col>
           <Button variant="success" onClick={props.toggleEdit}>
             Edit
-          </Button>
-        </Col>
-        <Col>
-          <Button variant="success" onClick={() => {}}>
-            Add Education
-          </Button>
-        </Col>
-        <Col>
-          <Button variant="success" onClick={() => {}}>
-            Add Experience
           </Button>
         </Col>
       </Row>
