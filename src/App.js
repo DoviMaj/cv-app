@@ -39,6 +39,7 @@ class App extends React.Component {
     this.toggleEdit = this.toggleEdit.bind(this);
     this.addEducation = this.addEducation.bind(this);
     this.handleEdChange = this.handleEdChange.bind(this);
+    this.removeEd = this.removeEd.bind(this);
   }
   handleChange(e) {
     this.setState({
@@ -67,7 +68,8 @@ class App extends React.Component {
   }
   addEducation() {
     const thisStateEd = this.state.education;
-    const newId = thisStateEd[thisStateEd.length - 1].id + 1;
+    const newId =
+      thisStateEd.length === 0 ? 0 : thisStateEd[thisStateEd.length - 1].id + 1;
     const newEdField = {
       id: newId,
       schoolName: "",
@@ -77,6 +79,15 @@ class App extends React.Component {
     };
     this.setState({
       education: this.state.education.concat(newEdField),
+    });
+  }
+  removeEd(e) {
+    console.log(e.target.closest(".ed-container").id);
+    const newEd = this.state.education.filter(
+      (ed) => ed.id !== Number(e.target.closest(".ed-container").id)
+    );
+    this.setState({
+      education: newEd,
     });
   }
   render() {
@@ -92,6 +103,7 @@ class App extends React.Component {
         ) : (
           <MyForm
             addEducation={this.addEducation}
+            removeEd={this.removeEd}
             state={this.state}
             handleEdChange={this.handleEdChange}
             handleChange={this.handleChange}

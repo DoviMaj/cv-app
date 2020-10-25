@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Container, Col, Row } from "react-bootstrap";
+import { Form, Button, Container, Col, Row } from "react-bootstrap";
 
 function Education(props) {
   return (
@@ -7,7 +7,19 @@ function Education(props) {
       {props.state.map((item) => {
         return (
           <Container className="ed-container" id={item.id} key={item.id}>
-            <h2>Education {item.id}</h2>
+            <Row>
+              <Col
+                style={{
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <h2>Education {item.id}</h2>
+                <Button onClick={props.removeEd}>x</Button>
+              </Col>
+            </Row>
+
             <Row>
               <Col>
                 <Form.Label>School Name</Form.Label>

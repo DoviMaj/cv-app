@@ -11,13 +11,18 @@ class MyForm extends React.Component {
       handleChange,
       addEducation,
       handleEdChange,
+      removeEd,
       state,
     } = this.props;
     return (
       <Container>
         <BasicInfo handleChange={handleChange} state={state} />
 
-        <Education handleEdChange={handleEdChange} state={state.education} />
+        <Education
+          removeEd={removeEd}
+          handleEdChange={handleEdChange}
+          state={state.education}
+        />
         <Row>
           <Col lg={2}>
             <Button onClick={addEducation}>Add Education</Button>
