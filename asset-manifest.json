@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/main/static/css/main.b494cf8a.chunk.css",
-    "main.js": "/main/static/js/main.7620df3e.chunk.js",
-    "main.js.map": "/main/static/js/main.7620df3e.chunk.js.map",
-    "runtime-main.js": "/main/static/js/runtime-main.fbf966e0.js",
-    "runtime-main.js.map": "/main/static/js/runtime-main.fbf966e0.js.map",
-    "static/css/2.6414bb7b.chunk.css": "/main/static/css/2.6414bb7b.chunk.css",
-    "static/js/2.063f0f50.chunk.js": "/main/static/js/2.063f0f50.chunk.js",
-    "static/js/2.063f0f50.chunk.js.map": "/main/static/js/2.063f0f50.chunk.js.map",
-    "index.html": "/main/index.html",
-    "precache-manifest.5f67b3e0db8b78bbb36d3020832b66b7.js": "/main/precache-manifest.5f67b3e0db8b78bbb36d3020832b66b7.js",
-    "service-worker.js": "/main/service-worker.js",
-    "static/css/2.6414bb7b.chunk.css.map": "/main/static/css/2.6414bb7b.chunk.css.map",
-    "static/css/main.b494cf8a.chunk.css.map": "/main/static/css/main.b494cf8a.chunk.css.map",
-    "static/js/2.063f0f50.chunk.js.LICENSE.txt": "/main/static/js/2.063f0f50.chunk.js.LICENSE.txt"
+    "main.css": "/gh-pages/static/css/main.b494cf8a.chunk.css",
+    "main.js": "/gh-pages/static/js/main.e549ca14.chunk.js",
+    "main.js.map": "/gh-pages/static/js/main.e549ca14.chunk.js.map",
+    "runtime-main.js": "/gh-pages/static/js/runtime-main.866c2828.js",
+    "runtime-main.js.map": "/gh-pages/static/js/runtime-main.866c2828.js.map",
+    "static/css/2.6414bb7b.chunk.css": "/gh-pages/static/css/2.6414bb7b.chunk.css",
+    "static/js/2.063f0f50.chunk.js": "/gh-pages/static/js/2.063f0f50.chunk.js",
+    "static/js/2.063f0f50.chunk.js.map": "/gh-pages/static/js/2.063f0f50.chunk.js.map",
+    "index.html": "/gh-pages/index.html",
+    "precache-manifest.2d804aefc7fcb199661ebb1b71d7738e.js": "/gh-pages/precache-manifest.2d804aefc7fcb199661ebb1b71d7738e.js",
+    "service-worker.js": "/gh-pages/service-worker.js",
+    "static/css/2.6414bb7b.chunk.css.map": "/gh-pages/static/css/2.6414bb7b.chunk.css.map",
+    "static/css/main.b494cf8a.chunk.css.map": "/gh-pages/static/css/main.b494cf8a.chunk.css.map",
+    "static/js/2.063f0f50.chunk.js.LICENSE.txt": "/gh-pages/static/js/2.063f0f50.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fbf966e0.js",
+    "static/js/runtime-main.866c2828.js",
     "static/css/2.6414bb7b.chunk.css",
     "static/js/2.063f0f50.chunk.js",
     "static/css/main.b494cf8a.chunk.css",
-    "static/js/main.7620df3e.chunk.js"
+    "static/js/main.e549ca14.chunk.js"
   ]
 }
