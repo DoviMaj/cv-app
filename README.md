@@ -1,4 +1,4 @@
-## CV Application 
+## CV App
 
 Created for TheOdinProject
 
