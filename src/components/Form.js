@@ -40,7 +40,11 @@ class MyForm extends React.Component {
             <Button onClick={addExperience}>Add Experience</Button>
           </Col>
         </Row>
-        <Button onClick={toggleEdit} type="primary">
+        <Button
+          style={{ marginTop: "20px" }}
+          onClick={toggleEdit}
+          type="primary"
+        >
           Close
         </Button>
       </Container>
