@@ -11,13 +11,15 @@ class MyForm extends React.Component {
       handleChange,
       addEducation,
       handleEdChange,
+      handleExChange,
+      removeEx,
+      addExperience,
       removeEd,
       state,
     } = this.props;
     return (
       <Container>
         <BasicInfo handleChange={handleChange} state={state} />
-
         <Education
           removeEd={removeEd}
           handleEdChange={handleEdChange}
@@ -28,11 +30,14 @@ class MyForm extends React.Component {
             <Button onClick={addEducation}>Add Education</Button>
           </Col>
         </Row>
-
-        <Experience handleChange={handleChange} state={state} />
+        <Experience
+          removeEx={removeEx}
+          handleExChange={handleExChange}
+          state={state.experience}
+        />
         <Row>
           <Col lg={2}>
-            <Button>Add Experience</Button>
+            <Button onClick={addExperience}>Add Experience</Button>
           </Col>
         </Row>
         <Button onClick={toggleEdit} type="primary">

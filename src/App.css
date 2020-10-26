@@ -7,6 +7,31 @@
   pointer-events: none;
 }
 
+h1 {
+  padding: 20px;
+}
+
+.container {
+  margin-bottom: 30px;
+}
+
+.component {
+  border-radius: 5px;
+  box-shadow: 0px 0px 14px 0px #b9bcc1;
+}
+
+.cv {
+  background: antiquewhite;
+  border-radius: 5px;
+  padding: 90px;
+  box-shadow: 0px 0px 14px 0px #b9bcc1;
+}
+
+.edit-button,
+.print-button {
+  margin-top: 20px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

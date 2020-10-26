@@ -6,7 +6,10 @@ class BasicInfo extends React.Component {
     const { name, email, adress, phoneNumber } = this.props.state;
     const { handleChange } = this.props;
     return (
-      <Container>
+      <Container
+        className="component"
+        style={{ background: "#c2c2d0", color: "white", padding: "20px" }}
+      >
         <h2>Basic Information</h2>
         <Row xs={2} md={4} lg={12}>
           <Col>

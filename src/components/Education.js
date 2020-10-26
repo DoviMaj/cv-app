@@ -3,7 +3,15 @@ import { Form, Button, Container, Col, Row } from "react-bootstrap";
 
 function Education(props) {
   return (
-    <div>
+    <div
+      className="component"
+      style={{
+        background: "rgb(148 218 202)",
+        color: "white",
+        padding: "20px",
+        marginBottom: " 10px",
+      }}
+    >
       {props.state.map((item) => {
         return (
           <Container className="ed-container" id={item.id} key={item.id}>
@@ -13,10 +21,13 @@ function Education(props) {
                   alignItems: "center",
                   display: "flex",
                   justifyContent: "center",
+                  gap: "20px",
                 }}
               >
                 <h2>Education {item.id}</h2>
-                <Button onClick={props.removeEd}>x</Button>
+                <Button variant="success" onClick={props.removeEd}>
+                  x
+                </Button>
               </Col>
             </Row>
 
